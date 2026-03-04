@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 const footerColumns = [
   {
     heading: "Product",
@@ -39,6 +43,12 @@ const SlackLogoMark = () => (
 );
 
 export default function Footer() {
+  const [openSection, setOpenSection] = useState<string | null>(null);
+
+  const toggleSection = (heading: string) => {
+    setOpenSection(openSection === heading ? null : heading);
+  };
+
   return (
     <footer>
       {/* Pre-footer CTA */}
@@ -127,8 +137,8 @@ export default function Footer() {
             <SlackLogoMark />
           </div>
 
-          {/* Columns */}
-          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
+          {/* Columns - Desktop */}
+          <div className="hidden md:flex flex-1 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 md:grid">
             {footerColumns.map((col) => (
               <div key={col.heading}>
                 <p className="mb-3 text-xs font-bold uppercase tracking-wider text-[#1d1c1d]">
@@ -143,6 +153,42 @@ export default function Footer() {
                     </li>
                   ))}
                 </ul>
+              </div>
+            ))}
+          </div>
+
+          {/* Columns - Mobile Accordion */}
+          <div className="flex-1 md:hidden w-full">
+            {footerColumns.map((col) => (
+              <div key={col.heading} className="border-b border-gray-200">
+                <button
+                  onClick={() => toggleSection(col.heading)}
+                  className="w-full flex items-center justify-between py-4 text-left"
+                >
+                  <p className="text-sm font-bold uppercase tracking-wider text-[#1d1c1d]">
+                    {col.heading}
+                  </p>
+                  <svg
+                    className={`h-5 w-5 text-gray-500 transition-transform ${
+                      openSection === col.heading ? "rotate-180" : ""
+                    }`}
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
+                  >
+                    <path d="M4 6l4 4 4-4" />
+                  </svg>
+                </button>
+                {openSection === col.heading && (
+                  <ul className="space-y-2 pb-4">
+                    {col.links.map((link) => (
+                      <li key={link}>
+                        <a href="#" className="text-sm text-gray-500 hover:text-[#611f69] transition-colors">
+                          {link}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
