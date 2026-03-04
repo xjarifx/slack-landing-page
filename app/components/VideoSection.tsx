@@ -87,14 +87,18 @@ export default function VideoSection() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all ${
-                isActive
-                  ? "bg-[#1d1c1d] text-white shadow-md"
-                  : "text-[#611f69] hover:bg-[#ecdfe8] bg-transparent"
-              }`}
+              className={`
+                flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold 
+                transition-all duration-200 ease-in-out
+                ${
+                  isActive
+                    ? "bg-[#2d1b3d] text-white shadow-lg scale-[1.02] ring-2 ring-[#2d1b3d]/20"
+                    : "bg-white/60 text-[#611f69] hover:bg-white hover:shadow-md hover:scale-[1.01] active:scale-[0.99]"
+                }
+              `}
             >
               {tab.label}
-              <span className={isActive ? "text-white" : "text-[#611f69]"}>
+              <span className={`transition-transform duration-200 ${isActive ? "text-white scale-110" : "text-[#611f69]"}`}>
                 {tab.icon}
               </span>
             </button>
