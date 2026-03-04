@@ -3,6 +3,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Button from '@/app/components/shared/Button';
 import WaveDivider from '@/app/components/shared/WaveDivider';
 
@@ -18,48 +19,62 @@ const stories = [
     bg: "bg-gray-900",
     logo: (
       <div className="flex items-center gap-2">
-        {/* OpenAI icon */}
-        <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22.28 9.28a5.76 5.76 0 00-.52-4.73 5.83 5.83 0 00-6.27-2.8A5.76 5.76 0 0011.2 0a5.83 5.83 0 00-5.56 4.04 5.76 5.76 0 00-3.84 2.8 5.83 5.83 0 00.72 6.84 5.76 5.76 0 00.52 4.73 5.83 5.83 0 006.27 2.8A5.76 5.76 0 0012.8 24a5.83 5.83 0 005.57-4.04 5.76 5.76 0 003.83-2.8 5.83 5.83 0 00-.72-6.84l.8.96zm-10.09 8.4a3.07 3.07 0 01-1.97-.72l.1-.05 3.27-1.89a.54.54 0 00.27-.47v-4.6l1.38.8a.05.05 0 01.03.04v3.82a3.1 3.1 0 01-3.08 3.07zm-6.6-2.84a3.07 3.07 0 01-.37-2.07l.1.06 3.27 1.89a.54.54 0 00.54 0l3.99-2.3v1.6a.05.05 0 01-.02.04L9.56 16a3.1 3.1 0 01-3.97-1.16zm-.86-7.16a3.07 3.07 0 011.6-1.35v3.9a.54.54 0 00.27.47l3.98 2.3-1.38.8a.05.05 0 01-.05 0L5.88 12a3.1 3.1 0 01-.15-4.32zm11.37 2.66l-3.99-2.3 1.38-.8a.05.05 0 01.05 0l3.27 1.88a3.09 3.09 0 01-.48 5.58v-3.9a.54.54 0 00-.23-.46zm1.37-2.08l-.1-.06-3.27-1.89a.54.54 0 00-.54 0l-3.99 2.3v-1.6a.05.05 0 01.02-.04l3.28-1.89a3.09 3.09 0 014.6 3.18zm-8.63 2.84l-1.38-.8a.05.05 0 01-.03-.04V6.94a3.09 3.09 0 015.07-2.37l-.1.05-3.27 1.89a.54.54 0 00-.27.47l-.02 4.59zm.75-1.62l1.78-1.02 1.77 1.02v2.04l-1.77 1.02-1.78-1.02V9.48z"/>
-        </svg>
-        <span className="text-white font-semibold text-base">OpenAI</span>
+        <Image 
+          src="/company_logo/openai.svg" 
+          alt="OpenAI logo" 
+          width={120} 
+          height={32} 
+          className="h-8 w-auto brightness-0 invert"
+        />
       </div>
     ),
   },
   {
-    id: "box",
-    company: "Box",
+    id: "salesforce",
+    company: "Salesforce",
     featured: false,
     hasPlay: false,
     bg: "bg-[#1a1a2e]",
     logo: (
-      <span className="text-white text-3xl font-bold tracking-tight" style={{ fontFamily: "sans-serif" }}>
-        box
-      </span>
+      <Image 
+        src="/company_logo/salesforce.png" 
+        alt="Salesforce logo" 
+        width={140} 
+        height={40} 
+        className="h-10 w-auto brightness-0 invert"
+      />
     ),
   },
   {
-    id: "caraway",
-    company: "Caraway",
+    id: "ibm",
+    company: "IBM",
     featured: false,
     hasPlay: false,
     bg: "bg-[#2d1b1b]",
     logo: (
-      <span className="text-white text-xl font-light tracking-widest" style={{ fontFamily: "Georgia, serif" }}>
-        Caraway
-      </span>
+      <Image 
+        src="/company_logo/ibm.png" 
+        alt="IBM logo" 
+        width={80} 
+        height={32} 
+        className="h-8 w-auto brightness-0 invert"
+      />
     ),
   },
   {
-    id: "rivian",
-    company: "Rivian",
+    id: "stripe",
+    company: "Stripe",
     featured: false,
     hasPlay: false,
     bg: "bg-[#1c1c1c]",
     logo: (
-      <span className="text-white text-xl font-bold tracking-[0.3em]" style={{ fontFamily: "sans-serif" }}>
-        RIVIAN
-      </span>
+      <Image 
+        src="/company_logo/stripe.png" 
+        alt="Stripe logo" 
+        width={100} 
+        height={40} 
+        className="h-10 w-auto brightness-0 invert"
+      />
     ),
   },
 ];

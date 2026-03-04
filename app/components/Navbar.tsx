@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import SlackLogo from '@/app/components/shared/icons/SlackLogo';
-import ChevronDown from '@/app/components/shared/icons/ChevronDown';
-import SearchIcon from '@/app/components/shared/icons/SearchIcon';
+import Image from "next/image";
+import ChevronDown from "@/app/components/shared/icons/ChevronDown";
+import SearchIcon from "@/app/components/shared/icons/SearchIcon";
 
 const navLinks = [
   { label: "Features", hasDropdown: true },
@@ -38,13 +38,27 @@ export default function Navbar() {
         {/* Logo */}
         <a href="/" className="flex flex-col items-start leading-none shrink-0">
           <div className="flex items-center gap-2">
-            <SlackLogo />
+            <Image 
+              src="/company_logo/slack.png" 
+              alt="Slack" 
+              width={32} 
+              height={32}
+              className="h-8 w-8"
+            />
             <span className="text-2xl font-bold tracking-tight text-[#1d1c1d]">
               slack
             </span>
           </div>
-          <span className="ml-10 text-[10px] text-gray-500 tracking-wide">
-            from Salesforce
+          <span className="ml-10 text-[10px] text-gray-500 tracking-wide flex items-center gap-1">
+            from
+            <Image
+              src="/company_logo/salesforce.png"
+              alt="Salesforce"
+              width={50}
+              height={12}
+              className="h-2.5 w-auto opacity-60"
+            />
+            Salesforce
           </span>
         </a>
 
