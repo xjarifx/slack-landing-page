@@ -138,9 +138,9 @@ export default function VideoSection() {
   const [activeTab, setActiveTab] = useState("plan-launches");
 
   return (
-    <section className="bg-white py-16 px-6">
+    <section className="bg-white py-10 px-4">
       {/* Video placeholder */}
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-5xl">
         <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl bg-[#3b0764] aspect-video flex items-center justify-center">
           {/* Decorative gradient blobs matching the screenshot background */}
           <div className="absolute -top-16 -left-16 h-64 w-64 rounded-full bg-purple-400 opacity-30 blur-3xl" />
@@ -171,7 +171,7 @@ export default function VideoSection() {
       </div>
 
       {/* Tab buttons */}
-      <div className="mx-auto mt-10 max-w-2xl flex flex-wrap items-center justify-center gap-x-2 gap-y-3">
+      <div className="mx-auto mt-6 max-w-3xl flex flex-wrap items-center justify-center gap-x-2 gap-y-3">
         {tabs.map((tab) => {
           const isActive = activeTab === tab.id;
           return (
@@ -179,7 +179,7 @@ export default function VideoSection() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`
-                flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-200 ease-in-out
+                flex items-center gap-2 rounded-full px-5 py-2.5 text-base font-semibold transition-all duration-200 ease-in-out
                 ${
                   isActive
                     ? "bg-[#2d1b3d] text-white border border-[#2d1b3d]"

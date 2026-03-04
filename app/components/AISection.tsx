@@ -37,23 +37,24 @@ export default function AISection() {
   const [activeTab, setActiveTab] = useState("slackbot");
 
   return (
-    <section className="relative overflow-hidden bg-[#4a1260] px-6 pt-20 pb-0 text-white">
+    <section className="relative bg-[#4a1260] pt-12 pb-0 text-white overflow-hidden">
       <Sparkles />
+      
+      <div className="px-4 mx-auto max-w-7xl">
+        {/* Heading */}
+        <div className="relative z-10 mx-auto max-w-3xl text-center">
+          <h2 className="text-5xl sm:text-6xl font-extrabold leading-tight tracking-tight">
+            Reimagine what&apos;s possible<br />with AI and agents.
+          </h2>
+          <p className="mt-3 text-base sm:text-lg text-white/75 leading-relaxed max-w-2xl mx-auto">
+            AI in Slack doesn&apos;t make you think, it helps you do. It summarizes and searches based
+            on actual conversations, and with it, makes every app and agent more helpful and
+            contextually aware than ever.
+          </p>
+        </div>
 
-      {/* Heading */}
-      <div className="relative z-10 mx-auto max-w-2xl text-center">
-        <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight">
-          Reimagine what&apos;s possible<br />with AI and agents.
-        </h2>
-        <p className="mt-5 text-sm sm:text-base text-white/75 leading-relaxed max-w-lg mx-auto">
-          AI in Slack doesn&apos;t make you think, it helps you do. It summarizes and searches based
-          on actual conversations, and with it, makes every app and agent more helpful and
-          contextually aware than ever.
-        </p>
-      </div>
-
-      {/* Two-column: tabs left, video right */}
-      <div className="relative z-10 mx-auto mt-12 max-w-5xl flex flex-col md:flex-row items-stretch gap-6">
+        {/* Two-column: tabs left, video right */}
+        <div className="relative z-10 mx-auto mt-8 max-w-6xl flex flex-col md:flex-row items-stretch gap-6">
         {/* Left — vertical tab list */}
         <div className="w-full md:w-72 shrink-0 bg-white rounded-2xl p-6 flex flex-col gap-1 shadow-xl">
           {aiTabs.map((tab) => {
@@ -89,9 +90,10 @@ export default function AISection() {
           </div>
         </div>
       </div>
+      </div>
 
       {/* Bottom white curve - Slack-style with overlapping arcs */}
-      <div className="relative mt-16 -mx-6 h-20">
+      <div className="relative mt-16 -mx-4 h-20">
         {/* Purple arc (concave down) */}
         <div className="absolute inset-x-0 top-0 overflow-hidden">
           <svg viewBox="0 0 1220 128" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-20 block" style={{ transform: 'translateY(-1px)' }}>

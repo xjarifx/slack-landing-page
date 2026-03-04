@@ -12,12 +12,12 @@ export default function SectionHeading({
   className = '' 
 }: SectionHeadingProps) {
   return (
-    <div className={`mx-auto max-w-2xl text-center ${className}`}>
-      <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#1d1c1d]">
+    <div className={`mx-auto max-w-3xl text-center ${className}`}>
+      <h2 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-[#1d1c1d]">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-sm sm:text-base text-gray-500 leading-relaxed">
+        <p className="mt-3 text-base sm:text-lg text-gray-500 leading-relaxed">
           {subtitle}
         </p>
       )}

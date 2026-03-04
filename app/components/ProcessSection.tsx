@@ -44,7 +44,7 @@ export default function ProcessSection() {
         }
       />
 
-      <div className={`mx-auto mt-16 ${SPACING.maxWidthContent} flex flex-col md:flex-row gap-10 items-start`}>
+      <div className={`mx-auto mt-10 ${SPACING.maxWidthContent} flex flex-col md:flex-row gap-6 items-start`}>
         <Accordion items={items} defaultActive="templates" className="w-full md:w-96 shrink-0" />
         <VideoPlaceholder className="flex-1 w-full aspect-video" />
       </div>

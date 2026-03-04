@@ -79,24 +79,25 @@ const G2Badge = () => (
 
 export default function SocialProofSection() {
   return (
-    <section className="bg-white px-6 py-20">
-      {/* Heading */}
-      <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1d1c1d]">
-          Millions of people love to work in Slack.
-        </h2>
-      </div>
+    <section className="bg-white py-12 overflow-hidden">
+      <div className="px-4 mx-auto max-w-7xl">
+        {/* Heading */}
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#1d1c1d]">
+            Millions of people love to work in Slack.
+          </h2>
+        </div>
 
-      {/* Metrics + G2 */}
-      <div className="mx-auto mt-12 max-w-4xl flex flex-col md:flex-row gap-0 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+        {/* Metrics + G2 */}
+        <div className="mx-auto mt-8 max-w-5xl flex flex-col md:flex-row gap-0 divide-y md:divide-y-0 md:divide-x divide-gray-200">
         {/* Left — stacked metrics */}
         <div className="flex-1 flex flex-col gap-6 pr-0 md:pr-12 pb-8 md:pb-0">
           {metrics.map((m, i) => (
             <div key={i} className="flex items-center gap-5">
-              <span className="text-4xl font-extrabold text-[#1d1c1d] w-24 shrink-0 flex justify-end">
+              <span className="text-5xl font-extrabold text-[#1d1c1d] w-28 shrink-0 flex justify-end">
                 {m.value}
               </span>
-              <span className="text-sm text-black leading-snug flex justify-start items-center">
+              <span className="text-base text-black leading-snug flex justify-start items-center">
                 {m.label}
               </span>
             </div>
@@ -105,10 +106,10 @@ export default function SocialProofSection() {
 
         {/* Right — G2 */}
         <div className="flex-1 flex flex-col gap-4 pl-0 md:pl-12 pt-8 md:pt-0">
-          <p className="text-lg font-bold text-[#1d1c1d]">
+          <p className="text-xl font-bold text-[#1d1c1d]">
             Don&apos;t just take our word for it.
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-base text-gray-500">
             Slack is a leader in over 314 G2 market reports.<sup>5</sup>
           </p>
           <div className="grid grid-cols-3 gap-2">
@@ -120,14 +121,14 @@ export default function SocialProofSection() {
       </div>
 
       {/* Deep dive heading */}
-      <div className="mx-auto mt-20 max-w-3xl text-center">
-        <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#1d1c1d]">
+      <div className="mx-auto mt-12 max-w-4xl text-center">
+        <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1d1c1d]">
           Your Slack deep dive starts here.
         </h2>
       </div>
 
       {/* Resource cards */}
-      <div className="mx-auto mt-8 max-w-4xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="mx-auto mt-6 max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {resources.map((r) => (
           <div
             key={r.title}
@@ -150,7 +151,7 @@ export default function SocialProofSection() {
               <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
                 {r.type}
               </span>
-              <p className="text-sm font-bold text-[#1d1c1d] leading-snug flex-1">
+              <p className="text-base font-bold text-[#1d1c1d] leading-snug flex-1">
                 {r.title}
               </p>
               <a
@@ -177,26 +178,27 @@ export default function SocialProofSection() {
         ))}
       </div>
 
-      {/* Footnotes */}
-      <div className="mx-auto mt-16 max-w-3xl">
-        <p className="text-[10px] text-gray-400 leading-relaxed">
-          <sup>1</sup>Based on an internal analysis during the pilot of AI in
-          Slack features (channel recap, thread summaries, and AI search
-          answers).
-          <br />
-          <sup>2</sup>FY24 Customer Success Metrics. Base: Total n = 247-1,696;
-          Slack internal data.
-          <br />
-          <sup>3</sup>FY25 Slack internal data, product usage analysis.
-          <br />
-          <sup>4</sup>FY25 Slack Customer Tracking Survey. Internal survey of
-          weekly active Slack users in the US, UK, CA, and AU. Total n = 2,610.
-          <br />
-          <sup>5</sup>G2 Winter 2026 market reports for work management,
-          workflow management, project collaboration software, enterprise
-          search, knowledge base, employee Q&amp;A, audio conferencing, business
-          instant messaging, unified workspaces and more.
-        </p>
+        {/* Footnotes */}
+        <div className="mx-auto mt-10 max-w-4xl">
+          <p className="text-xs text-gray-400 leading-relaxed">
+            <sup>1</sup>Based on an internal analysis during the pilot of AI in
+            Slack features (channel recap, thread summaries, and AI search
+            answers).
+            <br />
+            <sup>2</sup>FY24 Customer Success Metrics. Base: Total n = 247-1,696;
+            Slack internal data.
+            <br />
+            <sup>3</sup>FY25 Slack internal data, product usage analysis.
+            <br />
+            <sup>4</sup>FY25 Slack Customer Tracking Survey. Internal survey of
+            weekly active Slack users in the US, UK, CA, and AU. Total n = 2,610.
+            <br />
+            <sup>5</sup>G2 Winter 2026 market reports for work management,
+            workflow management, project collaboration software, enterprise
+            search, knowledge base, employee Q&amp;A, audio conferencing, business
+            instant messaging, unified workspaces and more.
+          </p>
+        </div>
       </div>
     </section>
   );

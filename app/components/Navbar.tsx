@@ -80,7 +80,14 @@ export default function Navbar() {
 
           <a
             href="#"
-            className="rounded bg-[#611f69] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#4a154b] transition-colors"
+            className="rounded border-2 border-[#611f69] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#611f69] hover:bg-[#f4ede4] transition-colors"
+          >
+            Request a Demo
+          </a>
+
+          <a
+            href="#"
+            className="rounded bg-[#611f69] border  border-[#611f69] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#4a154b] transition-colors"
           >
             Get Started
           </a>
@@ -116,9 +123,17 @@ export default function Navbar() {
               strokeWidth={2}
             >
               {mobileOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               )}
             </svg>
           </button>
@@ -154,9 +169,17 @@ export default function Navbar() {
               strokeWidth={2}
             >
               {mobileOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               )}
             </svg>
           </button>
@@ -177,7 +200,10 @@ export default function Navbar() {
             </a>
           ))}
           <hr className="my-2 border-gray-200" />
-          <a href="#" className="py-2 text-sm font-medium text-[#1d1c1d] hover:text-[#611f69]">
+          <a
+            href="#"
+            className="py-2 text-sm font-medium text-[#1d1c1d] hover:text-[#611f69]"
+          >
             Sign in
           </a>
           <a

@@ -19,7 +19,7 @@ export const BREAKPOINTS = {
 
 // Common spacing values
 export const SPACING = {
-  sectionPadding: 'px-6 py-20',
-  maxWidthContent: 'max-w-5xl',
-  maxWidthText: 'max-w-2xl',
+  sectionPadding: 'px-4 py-10',
+  maxWidthContent: 'max-w-6xl',
+  maxWidthText: 'max-w-3xl',
 } as const;

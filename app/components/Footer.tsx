@@ -14,11 +14,11 @@ export default function Footer() {
   return (
     <footer>
       {/* Pre-footer CTA */}
-      <div className="relative bg-[#4a1260] px-6 pt-16 pb-0 text-center overflow-hidden">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+      <div className="relative bg-[#4a1260] px-4 pt-10 pb-0 text-center overflow-hidden">
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-white">
           See all you can accomplish in Slack.
         </h2>
-        <div className="mt-6 flex flex-wrap justify-center gap-4 pb-16">
+        <div className="mt-4 flex flex-wrap justify-center gap-4 pb-10">
           <a
             href="#"
             className="rounded border-2 border-white px-8 py-2.5 text-sm font-bold uppercase tracking-widest text-white hover:bg-white hover:text-[#4a1260] transition-colors"
@@ -33,7 +33,7 @@ export default function Footer() {
           </a>
         </div>
         {/* White wave - Slack-style with overlapping arcs */}
-        <div className="relative -mx-6 h-20">
+        <div className="relative -mx-4 h-20">
           {/* Purple arc (concave down) */}
           <div className="absolute inset-x-0 top-0 overflow-hidden">
             <svg viewBox="0 0 1220 128" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-20 block" style={{ transform: 'translateY(-1px)' }}>
@@ -50,9 +50,9 @@ export default function Footer() {
       </div>
 
       {/* Main footer */}
-      <div className="bg-white px-6 pt-6 pb-10">
+      <div className="bg-white px-4 pt-4 pb-8">
         {/* Region + Social */}
-        <div className="mx-auto max-w-6xl flex items-center justify-between py-4 border-b border-gray-100 mb-10">
+        <div className="mx-auto max-w-7xl flex items-center justify-between py-3 border-b border-gray-100 mb-6">
           <button className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-700">
             <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
@@ -93,7 +93,7 @@ export default function Footer() {
         </div>
 
         {/* Link columns */}
-        <div className="mx-auto max-w-6xl flex flex-wrap gap-8">
+        <div className="mx-auto max-w-7xl flex flex-wrap gap-8">
           {/* Logo */}
           <div className="w-16 shrink-0 pt-1">
             <SlackLogo className="h-10 w-10" />
@@ -103,13 +103,13 @@ export default function Footer() {
           <div className="hidden md:flex flex-1 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 md:grid">
             {footerColumns.map((col) => (
               <div key={col.heading}>
-                <p className="mb-3 text-xs font-bold uppercase tracking-wider text-[#1d1c1d]">
+                <p className="mb-2 text-xs font-bold uppercase tracking-wider text-[#1d1c1d]">
                   {col.heading}
                 </p>
-                <ul className="space-y-2">
+                <ul className="space-y-1.5">
                   {col.links.map((link) => (
                     <li key={link}>
-                      <a href="#" className="text-xs text-gray-500 hover:text-[#611f69] transition-colors">
+                      <a href="#" className="text-sm text-gray-500 hover:text-[#611f69] transition-colors">
                         {link}
                       </a>
                     </li>
@@ -157,25 +157,64 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mx-auto mt-12 max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-gray-100 pt-6">
-          <div className="flex flex-wrap items-center gap-3 text-xs text-gray-400">
-            <a href="#" className="text-[#611f69] font-semibold hover:underline flex items-center gap-1">
+        <div className="mx-auto mt-8 max-w-7xl border-t border-gray-100 pt-4">
+          {/* Mobile/Tablet: Stacked layout */}
+          <div className="flex flex-col items-start gap-6 lg:hidden">
+            {/* Slack Logo */}
+            <SlackLogo className="h-12 w-12" />
+            
+            {/* Download Link */}
+            <a href="#" className="text-[#1890d5] text-base font-semibold hover:underline flex items-center gap-2">
               Download Slack
-              <svg className="h-3 w-3" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm-.5 11.5v-5l-2 2-1-1 3.5-3.5 3.5 3.5-1 1-2-2v5h-1z"/></svg>
+              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </a>
-            <span>·</span>
-            <a href="#" className="hover:text-gray-600">Privacy</a>
-            <span>·</span>
-            <a href="#" className="hover:text-gray-600">Terms</a>
-            <span>·</span>
-            <a href="#" className="hover:text-gray-600">Cookie Preferences</a>
-            <span>·</span>
-            <a href="#" className="hover:text-gray-600">Your Privacy Choices</a>
+            
+            {/* Links */}
+            <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500">
+              <a href="#" className="hover:text-gray-700">Privacy</a>
+              <span>·</span>
+              <a href="#" className="hover:text-gray-700">Terms</a>
+              <span>·</span>
+              <a href="#" className="hover:text-gray-700">Cookie Preferences</a>
+              <span>·</span>
+              <a href="#" className="hover:text-gray-700 flex items-center gap-1">
+                Your Privacy Choices
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10" fill="#1890d5"/>
+                  <path d="M8 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+            </div>
+            
+            {/* Copyright */}
+            <p className="text-sm text-gray-500 leading-relaxed">
+              ©2026 Slack Technologies, LLC, a Salesforce company. All rights reserved. Various trademarks held by their respective owners.
+            </p>
           </div>
-          <p className="text-xs text-gray-400 text-center sm:text-right">
-            ©2026 Slack Technologies, LLC, a Salesforce company. All rights reserved.<br />
-            Various trademarks held by their respective owners.
-          </p>
+
+          {/* Desktop: Original horizontal layout */}
+          <div className="hidden lg:flex flex-row items-center justify-between gap-3">
+            <div className="flex flex-wrap items-center gap-3 text-sm text-gray-400">
+              <a href="#" className="text-[#611f69] font-semibold hover:underline flex items-center gap-1">
+                Download Slack
+                <svg className="h-3 w-3" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm-.5 11.5v-5l-2 2-1-1 3.5-3.5 3.5 3.5-1 1-2-2v5h-1z"/></svg>
+              </a>
+              <span>·</span>
+              <a href="#" className="hover:text-gray-600">Privacy</a>
+              <span>·</span>
+              <a href="#" className="hover:text-gray-600">Terms</a>
+              <span>·</span>
+              <a href="#" className="hover:text-gray-600">Cookie Preferences</a>
+              <span>·</span>
+              <a href="#" className="hover:text-gray-600">Your Privacy Choices</a>
+            </div>
+            <p className="text-sm text-gray-400 text-right">
+              ©2026 Slack Technologies, LLC, a Salesforce company. All rights reserved.<br />
+              Various trademarks held by their respective owners.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

@@ -56,24 +56,24 @@ const trustedLogos = [
 
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center text-center px-6 pt-16 pb-12 bg-white">
-      <h1 className="max-w-2xl text-5xl sm:text-6xl font-extrabold leading-tight tracking-tight text-[#1d1c1d]">
+    <section className="flex flex-col items-center text-center px-4 pt-12 pb-8 bg-white">
+      <h1 className="max-w-4xl text-6xl sm:text-7xl font-extrabold leading-tight tracking-tight text-[#1d1c1d]">
         Slack is your team&apos;s collective{" "}
         <span role="img" aria-label="brain">🧠</span>{" "}
         brain.
       </h1>
 
-      <p className="mt-6 max-w-md text-base sm:text-lg text-gray-600">
+      <p className="mt-4 max-w-2xl text-lg sm:text-xl text-gray-600">
         Move faster and work smarter, with people, apps, and AI at your side.
       </p>
 
-      <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+      <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
         <Button variant="primary">Get Started</Button>
         <Button variant="secondary">Find Your Plan →</Button>
       </div>
 
-      <div className="mt-12 flex flex-wrap items-center justify-center gap-6 sm:gap-8">
-        <span className="text-xs text-gray-400 font-medium">Trusted by top teams</span>
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-8">
+        <span className="text-sm text-gray-400 font-medium">Trusted by top teams</span>
         {trustedLogos.map(({ name, svg }) => (
           <div key={name} className="flex items-center justify-center opacity-60 hover:opacity-90 transition-opacity">
             {svg}

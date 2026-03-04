@@ -10,7 +10,7 @@ export default function WaveDivider({
   className = '' 
 }: WaveDividerProps) {
   return (
-    <div className={`relative -mx-6 h-20 ${className}`}>
+    <div className={`relative -mx-4 h-20 ${className}`}>
       {/* Top arc (concave up) */}
       <div className="absolute inset-x-0 top-0 overflow-hidden">
         <svg 

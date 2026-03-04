@@ -45,23 +45,23 @@ export default function PlatformSection() {
         }
       />
 
-      <div className={`mx-auto mt-16 ${SPACING.maxWidthContent} flex flex-col md:flex-row gap-10 items-start`}>
+      <div className={`mx-auto mt-10 ${SPACING.maxWidthContent} flex flex-col md:flex-row gap-6 items-start`}>
         <div className="w-full md:w-96 shrink-0 flex flex-col gap-4">
           <Accordion items={items} defaultActive="integrations" />
           
           {/* Vercel testimonial */}
-          <div className="mt-8 space-y-2">
+          <div className="mt-4 space-y-2">
             <div className="flex items-center gap-1.5">
               <svg className="h-4 w-4 text-[#1d1c1d]" viewBox="0 0 116 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M57.5 0L115 100H0L57.5 0Z" />
               </svg>
               <p className="text-sm font-extrabold tracking-wide text-[#1d1c1d]">Vercel</p>
             </div>
-            <p className="text-sm italic text-gray-500 leading-relaxed">
+            <p className="text-base italic text-gray-500 leading-relaxed">
               &quot;Work starts in conversation. That&apos;s why we see Slack as the natural
               place to build our agents.&quot;
             </p>
-            <p className="text-sm text-gray-700">
+            <p className="text-base text-gray-700">
               <strong>Guillermo Rauch,</strong> CEO, Vercel
             </p>
           </div>

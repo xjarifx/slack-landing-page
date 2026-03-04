@@ -64,16 +64,17 @@ const stories = [
   },
 ];
   return (
-    <section className="bg-white px-6 pt-16 pb-0">
-      {/* Heading */}
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#1d1c1d] leading-tight">
-          The most innovative companies run<br />their business in Slack.
-        </h2>
-      </div>
+    <section className="bg-white pt-10 pb-0 overflow-hidden">
+      <div className="px-4 mx-auto max-w-7xl">
+        {/* Heading */}
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-[#1d1c1d] leading-tight">
+            The most innovative companies run<br />their business in Slack.
+          </h2>
+        </div>
 
-      {/* Cards grid */}
-      <div className="mx-auto mt-10 max-w-5xl flex flex-col sm:flex-row gap-3 items-stretch">
+        {/* Cards grid */}
+        <div className="mx-auto mt-8 max-w-6xl flex flex-col sm:flex-row gap-3 items-stretch">
         {stories.map((story) => {
           const isExpanded = expandedCard === story.id;
           
@@ -105,7 +106,7 @@ const stories = [
               }`}>
                 <div className="mb-2">{story.logo}</div>
                 {story.title && (
-                  <p className="text-white text-base font-semibold leading-snug max-w-xs">
+                  <p className="text-white text-lg font-semibold leading-snug max-w-md">
                     {story.title}
                   </p>
                 )}
@@ -139,12 +140,13 @@ const stories = [
       </div>
 
       {/* CTA buttons */}
-      <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
         <Button variant="primary">Get Started</Button>
         <Button variant="secondary">Find Your Plan</Button>
       </div>
+      </div>
 
-      <WaveDivider className="mt-16" />
+      <WaveDivider className="mt-10" />
     </section>
   );
 }

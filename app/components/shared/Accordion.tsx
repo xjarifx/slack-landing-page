@@ -20,7 +20,7 @@ export default function Accordion({ items, defaultActive, className = '' }: Acco
   const [active, setActive] = useState(defaultActive || items[0]?.id);
 
   return (
-    <div className={`flex flex-col gap-4 ${className}`}>
+    <div className={`flex flex-col gap-3 ${className}`}>
       {items.map((item) => {
         const isActive = active === item.id;
         return (
@@ -32,7 +32,7 @@ export default function Accordion({ items, defaultActive, className = '' }: Acco
             }`}
           >
             <p
-              className={`text-base font-semibold leading-snug ${
+              className={`text-lg font-semibold leading-snug ${
                 isActive ? 'text-[#611f69]' : 'text-[#1d1c1d]'
               }`}
             >
@@ -40,13 +40,13 @@ export default function Accordion({ items, defaultActive, className = '' }: Acco
             </p>
 
             {isActive && (
-              <div className="mt-3 space-y-3">
-                <p className="text-sm text-gray-600 leading-relaxed">
+              <div className="mt-2 space-y-2">
+                <p className="text-base text-gray-600 leading-relaxed">
                   {item.description}
                 </p>
                 <a
                   href="#"
-                  className="inline-flex items-center gap-1 text-sm font-semibold text-[#611f69] hover:underline"
+                  className="inline-flex items-center gap-1 text-base font-semibold text-[#611f69] hover:underline"
                 >
                   {item.link} →
                 </a>

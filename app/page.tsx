@@ -12,7 +12,7 @@ import SocialProofSection from "./components/SocialProofSection";
 
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <Hero />
       <VideoSection />
       <AISection />
