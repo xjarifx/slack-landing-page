@@ -90,11 +90,20 @@ export default function AISection() {
         </div>
       </div>
 
-      {/* Bottom white curve */}
-      <div className="relative z-10 mt-16 -mx-6">
-        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full block">
-          <path d="M0,80 C360,0 1080,0 1440,80 L1440,80 L0,80 Z" fill="white"/>
-        </svg>
+      {/* Bottom white curve - Slack-style with overlapping arcs */}
+      <div className="relative mt-16 -mx-6 h-20">
+        {/* Purple arc (concave down) */}
+        <div className="absolute inset-x-0 top-0 overflow-hidden">
+          <svg viewBox="0 0 1220 128" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-20 block" style={{ transform: 'translateY(-1px)' }}>
+            <path d="M0 0 C305 128 915 128 1220 0 L1220 0 L0 0 Z" fill="#4a1260"/>
+          </svg>
+        </div>
+        {/* White arc (upper part) */}
+        <div className="absolute inset-x-0 top-0 overflow-hidden">
+          <svg viewBox="0 0 1220 128" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-20 block">
+            <path d="M0 128 C305 0 915 0 1220 128 L1220 128 L0 128 Z" fill="white"/>
+          </svg>
+        </div>
       </div>
     </section>
   );
