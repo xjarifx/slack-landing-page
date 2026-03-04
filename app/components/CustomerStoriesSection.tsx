@@ -1,3 +1,11 @@
+
+
+'use client';
+
+import { useState } from 'react';
+
+export default function CustomerStoriesSection() {
+  const [expandedCard, setExpandedCard] = useState('openai');
 const stories = [
   {
     id: "openai",
@@ -53,8 +61,6 @@ const stories = [
     ),
   },
 ];
-
-export default function CustomerStoriesSection() {
   return (
     <section className="bg-white px-6 pt-16 pb-0">
       {/* Heading */}
@@ -66,49 +72,68 @@ export default function CustomerStoriesSection() {
 
       {/* Cards grid */}
       <div className="mx-auto mt-10 max-w-5xl flex flex-col sm:flex-row gap-3 items-stretch">
-        {stories.map((story) =>
-          story.featured ? (
-            /* Featured card — wider */
+        {stories.map((story) => {
+          const isExpanded = expandedCard === story.id;
+          
+          return (
             <div
               key={story.id}
-              className={`relative flex-[2] min-h-64 rounded-2xl overflow-hidden ${story.bg} cursor-pointer group`}
+              onMouseEnter={() => setExpandedCard(story.id)}
+              className={`relative min-h-64 rounded-2xl overflow-hidden ${story.bg} cursor-pointer group transition-all duration-500 ease-in-out ${
+                isExpanded ? 'flex-[2]' : 'flex-1'
+              }`}
             >
               {/* Simulated screenshot overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-500 ${
+                isExpanded ? 'opacity-100' : 'opacity-0'
+              }`} />
 
               {/* Decorative "screen" lines */}
-              <div className="absolute inset-0 flex flex-col gap-1 p-4 opacity-20">
+              <div className={`absolute inset-0 flex flex-col gap-1 p-4 opacity-20 transition-opacity duration-500 ${
+                isExpanded ? 'opacity-20' : 'opacity-0'
+              }`}>
                 {Array.from({ length: 10 }).map((_, i) => (
                   <div key={i} className="h-3 rounded bg-white/40" style={{ width: `${60 + (i % 3) * 15}%` }} />
                 ))}
               </div>
 
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 p-5 z-10">
+              {/* Content - shown when expanded */}
+              <div className={`absolute bottom-0 left-0 p-5 z-10 transition-all duration-500 ${
+                isExpanded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+              }`}>
                 <div className="mb-2">{story.logo}</div>
-                <p className="text-white text-base font-semibold leading-snug max-w-xs">
-                  {story.title}
-                </p>
+                {story.title && (
+                  <p className="text-white text-base font-semibold leading-snug max-w-xs">
+                    {story.title}
+                  </p>
+                )}
               </div>
 
-              {/* Play button */}
-              <div className="absolute bottom-5 right-5 z-10 h-10 w-10 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <svg className="h-4 w-4 text-[#1d1c1d] ml-0.5" viewBox="0 0 16 16" fill="currentColor">
-                  <polygon points="4,2 14,8 4,14" />
-                </svg>
+              {/* Logo - shown when collapsed */}
+              <div className={`absolute inset-0 flex items-center justify-center z-10 transition-all duration-500 ${
+                isExpanded ? 'opacity-0 scale-90 pointer-events-none' : 'opacity-100 scale-100'
+              }`}>
+                {story.logo}
               </div>
+
+              {/* Overlay for collapsed state */}
+              <div className={`absolute inset-0 bg-black/30 transition-opacity duration-500 ${
+                isExpanded ? 'opacity-0' : 'opacity-100 group-hover:opacity-20'
+              }`} />
+
+              {/* Play button - only for OpenAI */}
+              {story.hasPlay && (
+                <div className={`absolute bottom-5 right-5 z-10 h-10 w-10 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-all duration-300 ${
+                  isExpanded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+                }`}>
+                  <svg className="h-4 w-4 text-[#1d1c1d] ml-0.5" viewBox="0 0 16 16" fill="currentColor">
+                    <polygon points="4,2 14,8 4,14" />
+                  </svg>
+                </div>
+              )}
             </div>
-          ) : (
-            /* Regular cards */
-            <div
-              key={story.id}
-              className={`relative flex-1 min-h-48 sm:min-h-0 rounded-2xl overflow-hidden ${story.bg} cursor-pointer group flex items-center justify-center`}
-            >
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
-              <div className="relative z-10">{story.logo}</div>
-            </div>
-          )
-        )}
+          );
+        })}
       </div>
 
       {/* CTA buttons */}
@@ -127,11 +152,20 @@ export default function CustomerStoriesSection() {
         </a>
       </div>
 
-      {/* Bottom dark purple wave */}
-      <div className="mt-16 -mx-6">
-        <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full block">
-          <path d="M0,0 C360,100 1080,100 1440,0 L1440,100 L0,100 Z" fill="#4a1260" />
-        </svg>
+      {/* Bottom white to purple curve - Slack-style with overlapping arcs */}
+      <div className="relative mt-16 -mx-6 h-20">
+        {/* White arc (concave up - top part) */}
+        <div className="absolute inset-x-0 top-0 overflow-hidden">
+          <svg viewBox="0 0 1220 128" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-20 block">
+            <path d="M0 128 C305 0 915 0 1220 128 L1220 0 L0 0 Z" fill="white"/>
+          </svg>
+        </div>
+        {/* Purple arc (concave down - fills bottom) */}
+        <div className="absolute inset-x-0 top-0 overflow-hidden">
+          <svg viewBox="0 0 1220 128" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-20 block" style={{ transform: 'translateY(1px)' }}>
+            <path d="M0 0 C305 128 915 128 1220 0 L1220 128 L0 128 Z" fill="#4a1260"/>
+          </svg>
+        </div>
       </div>
     </section>
   );
