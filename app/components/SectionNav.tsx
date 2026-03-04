@@ -58,10 +58,10 @@ export default function SectionNav() {
     };
   }, []);
 
-  if (!isVisible) return null;
-
   return (
-    <div className="sticky top-20 z-40 flex justify-center py-4">
+    <div className={`sticky top-20 z-40 flex justify-center py-4 transition-opacity duration-300 ${
+      isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+    }`}>
       <nav className="flex items-center gap-1 rounded-full bg-[#f3e5f5] border border-[#e1bee7] px-2 py-1.5">
         {sections.map((section) => {
           const isActive = active === section;
@@ -72,10 +72,10 @@ export default function SectionNav() {
               setActive(section);
               document.getElementById(section.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
             }}
-              className={`rounded-full px-5 py-1.5 text-sm font-semibold transition-all ${
+              className={`rounded-full px-5 py-1.5 text-sm font-semibold transition-all border ${
                 isActive
-                  ? "bg-white text-[#611f69] shadow-sm border border-[#d8b4e2]"
-                  : "text-[#611f69] hover:bg-white/60"
+                  ? "bg-white text-[#611f69] shadow-sm border-[#d8b4e2]"
+                  : "text-[#611f69] hover:bg-white/60 border-transparent"
               }`}
             >
               {section}
