@@ -12,18 +12,22 @@ import SocialProofSection from "./components/SocialProofSection";
 
 export default function Home() {
   return (
-    <main className="overflow-x-hidden">
-      <Hero />
-      <VideoSection />
-      <AISection />
+    <>
+      <div className="overflow-x-hidden">
+        <Hero />
+        <VideoSection />
+        <AISection />
+      </div>
       <SectionNav />
-      <KnowledgeSection />
-      <PeopleSection />
-      <ProcessSection />
-      <PlatformSection />
-      <CustomerStoriesSection />
-      <StatsSection />
-      <SocialProofSection />
-    </main>
+      <div className="overflow-x-hidden">
+        <KnowledgeSection />
+        <PeopleSection />
+        <ProcessSection />
+        <PlatformSection />
+        <CustomerStoriesSection />
+        <StatsSection />
+        <SocialProofSection />
+      </div>
+    </>
   );
 }

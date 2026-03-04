@@ -27,7 +27,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full px-4 pt-4 transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm px-4 pt-4 transition-all duration-300">
       <div
         className={`mx-auto flex h-16 max-w-7xl items-center justify-between px-6 bg-white border transition-all duration-300 ${
           isScrolled
