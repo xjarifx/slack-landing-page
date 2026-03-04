@@ -3,6 +3,8 @@
 'use client';
 
 import { useState } from 'react';
+import Button from '@/app/components/shared/Button';
+import WaveDivider from '@/app/components/shared/WaveDivider';
 
 export default function CustomerStoriesSection() {
   const [expandedCard, setExpandedCard] = useState('openai');
@@ -138,35 +140,11 @@ const stories = [
 
       {/* CTA buttons */}
       <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-        <a
-          href="#"
-          className="rounded bg-[#611f69] px-8 py-3 text-sm font-bold uppercase tracking-widest text-white hover:bg-[#4a154b] transition-colors"
-        >
-          Get Started
-        </a>
-        <a
-          href="#"
-          className="rounded border border-[#611f69] px-8 py-3 text-sm font-bold uppercase tracking-widest text-[#611f69] hover:bg-[#f4ede4] transition-colors"
-        >
-          Find Your Plan
-        </a>
+        <Button variant="primary">Get Started</Button>
+        <Button variant="secondary">Find Your Plan</Button>
       </div>
 
-      {/* Bottom white to purple curve - Slack-style with overlapping arcs */}
-      <div className="relative mt-16 -mx-6 h-20">
-        {/* White arc (concave up - top part) */}
-        <div className="absolute inset-x-0 top-0 overflow-hidden">
-          <svg viewBox="0 0 1220 128" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-20 block">
-            <path d="M0 128 C305 0 915 0 1220 128 L1220 0 L0 0 Z" fill="white"/>
-          </svg>
-        </div>
-        {/* Purple arc (concave down - fills bottom) */}
-        <div className="absolute inset-x-0 top-0 overflow-hidden">
-          <svg viewBox="0 0 1220 128" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-20 block" style={{ transform: 'translateY(1px)' }}>
-            <path d="M0 0 C305 128 915 128 1220 0 L1220 128 L0 128 Z" fill="#4a1260"/>
-          </svg>
-        </div>
-      </div>
+      <WaveDivider className="mt-16" />
     </section>
   );
 }

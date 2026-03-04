@@ -1,46 +1,8 @@
 "use client";
 
 import { useState } from "react";
-
-const footerColumns = [
-  {
-    heading: "Product",
-    links: ["Watch Demo", "Pricing", "Paid vs. Free", "Accessibility", "Featured Releases", "Changelog", "Status"],
-  },
-  {
-    heading: "Features",
-    links: ["Channels", "Slack Connect", "Workflow Builder", "Messaging", "Huddles", "Canvas", "Lists", "Clips", "Apps & Integrations", "File Sharing", "Slack AI", "Agentforce", "Enterprise Search", "Security", "Enterprise Key Management", "Slack Atlas", "See all features"],
-  },
-  {
-    heading: "Why Slack?",
-    links: ["Slack vs. Email", "Slack vs. Teams", "Enterprise", "Small Business", "Productivity", "Task Management", "Scale", "Trust"],
-  },
-  {
-    heading: "Solutions",
-    links: ["Engineering", "IT", "Customer Service", "Sales", "Project Management", "Marketing", "Security", "Manufacturing, Auto & Energy", "Technology", "Media", "Financial Services", "Retail", "Public Sector", "Education", "Health & Life Sciences", "See all solutions"],
-  },
-  {
-    heading: "Resources",
-    links: ["Help Center", "What's New", "Resources Library", "Slack Blog", "Community", "Customer Stories", "Events", "Developers", "Partners", "Partner Offers", "Slack Marketplace", "Slack Certified"],
-  },
-  {
-    heading: "Company",
-    links: ["About Us", "News", "Media Kit", "Brand Center", "Careers", "Swag Store", "Engineering Blog", "Design Blog", "Contact Us"],
-  },
-];
-
-const SlackLogoMark = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" className="h-10 w-10">
-    <path d="M19.712 28.97a3.56 3.56 0 01-3.554 3.554 3.56 3.56 0 01-3.554-3.554 3.56 3.56 0 013.554-3.554h3.554v3.554z" fill="#36C5F0"/>
-    <path d="M21.505 28.97a3.56 3.56 0 013.554-3.554 3.56 3.56 0 013.554 3.554v8.901a3.56 3.56 0 01-3.554 3.554 3.56 3.56 0 01-3.554-3.554V28.97z" fill="#36C5F0"/>
-    <path d="M25.059 19.712a3.56 3.56 0 01-3.554-3.554 3.56 3.56 0 013.554-3.554 3.56 3.56 0 013.554 3.554v3.554h-3.554z" fill="#2EB67D"/>
-    <path d="M25.059 21.505a3.56 3.56 0 013.554 3.554 3.56 3.56 0 01-3.554 3.554h-8.901a3.56 3.56 0 01-3.554-3.554 3.56 3.56 0 013.554-3.554h8.901z" fill="#2EB67D"/>
-    <path d="M34.317 25.059a3.56 3.56 0 013.554 3.554 3.56 3.56 0 01-3.554 3.554 3.56 3.56 0 01-3.554-3.554v-3.554h3.554z" fill="#ECB22E"/>
-    <path d="M32.524 25.059a3.56 3.56 0 01-3.554-3.554 3.56 3.56 0 013.554-3.554h8.901a3.56 3.56 0 013.554 3.554 3.56 3.56 0 01-3.554 3.554h-8.901z" fill="#ECB22E"/>
-    <path d="M28.970 34.317a3.56 3.56 0 013.554 3.554 3.56 3.56 0 01-3.554 3.554 3.56 3.56 0 01-3.554-3.554v-3.554h3.554z" fill="#E01E5A"/>
-    <path d="M28.970 32.524a3.56 3.56 0 013.554 3.554v8.901a3.56 3.56 0 01-3.554 3.554 3.56 3.56 0 01-3.554-3.554v-8.901a3.56 3.56 0 013.554-3.554z" fill="#E01E5A"/>
-  </svg>
-);
+import SlackLogo from '@/app/components/shared/icons/SlackLogo';
+import { footerColumns } from '@/app/data/footerData';
 
 export default function Footer() {
   const [openSection, setOpenSection] = useState<string | null>(null);
@@ -134,7 +96,7 @@ export default function Footer() {
         <div className="mx-auto max-w-6xl flex flex-wrap gap-8">
           {/* Logo */}
           <div className="w-16 shrink-0 pt-1">
-            <SlackLogoMark />
+            <SlackLogo className="h-10 w-10" />
           </div>
 
           {/* Columns - Desktop */}

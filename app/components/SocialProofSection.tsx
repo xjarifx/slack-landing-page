@@ -72,6 +72,7 @@ const resources = [
 
 const G2Badge = () => (
   <div className="flex items-center justify-center">
+    {/* eslint-disable-next-line @next/next/no-img-element */}
     <img src="/badge/G2.png" alt="G2 Badge" className="w-full h-auto" />
   </div>
 );

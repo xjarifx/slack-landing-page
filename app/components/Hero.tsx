@@ -1,3 +1,5 @@
+import Button from '@/app/components/shared/Button';
+
 const trustedLogos = [
   {
     name: "GM",
@@ -55,35 +57,21 @@ const trustedLogos = [
 export default function Hero() {
   return (
     <section className="flex flex-col items-center text-center px-6 pt-16 pb-12 bg-white">
-      {/* Headline */}
       <h1 className="max-w-2xl text-5xl sm:text-6xl font-extrabold leading-tight tracking-tight text-[#1d1c1d]">
         Slack is your team&apos;s collective{" "}
         <span role="img" aria-label="brain">🧠</span>{" "}
         brain.
       </h1>
 
-      {/* Subheading */}
       <p className="mt-6 max-w-md text-base sm:text-lg text-gray-600">
         Move faster and work smarter, with people, apps, and AI at your side.
       </p>
 
-      {/* CTA Buttons */}
       <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-        <a
-          href="#"
-          className="rounded bg-[#611f69] px-8 py-3 text-sm font-bold uppercase tracking-widest text-white hover:bg-[#4a154b] transition-colors"
-        >
-          Get Started
-        </a>
-        <a
-          href="#"
-          className="rounded border border-[#611f69] px-8 py-3 text-sm font-bold uppercase tracking-widest text-[#611f69] hover:bg-[#f4ede4] transition-colors"
-        >
-          Find Your Plan →
-        </a>
+        <Button variant="primary">Get Started</Button>
+        <Button variant="secondary">Find Your Plan →</Button>
       </div>
 
-      {/* Trusted by */}
       <div className="mt-12 flex flex-wrap items-center justify-center gap-6 sm:gap-8">
         <span className="text-xs text-gray-400 font-medium">Trusted by top teams</span>
         {trustedLogos.map(({ name, svg }) => (

@@ -1,84 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
-const SlackLogo = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 54 54"
-    className="h-8 w-8"
-    aria-label="Slack logo"
-  >
-    {/* Green */}
-    <path
-      d="M19.712 28.97a3.56 3.56 0 01-3.554 3.554 3.56 3.56 0 01-3.554-3.554 3.56 3.56 0 013.554-3.554h3.554v3.554z"
-      fill="#36C5F0"
-    />
-    <path
-      d="M21.505 28.97a3.56 3.56 0 013.554-3.554 3.56 3.56 0 013.554 3.554v8.901a3.56 3.56 0 01-3.554 3.554 3.56 3.56 0 01-3.554-3.554V28.97z"
-      fill="#36C5F0"
-    />
-    {/* Blue */}
-    <path
-      d="M25.059 19.712a3.56 3.56 0 01-3.554-3.554 3.56 3.56 0 013.554-3.554 3.56 3.56 0 013.554 3.554v3.554h-3.554z"
-      fill="#2EB67D"
-    />
-    <path
-      d="M25.059 21.505a3.56 3.56 0 013.554 3.554 3.56 3.56 0 01-3.554 3.554h-8.901a3.56 3.56 0 01-3.554-3.554 3.56 3.56 0 013.554-3.554h8.901z"
-      fill="#2EB67D"
-    />
-    {/* Yellow */}
-    <path
-      d="M34.317 25.059a3.56 3.56 0 013.554 3.554 3.56 3.56 0 01-3.554 3.554 3.56 3.56 0 01-3.554-3.554v-3.554h3.554z"
-      fill="#ECB22E"
-    />
-    <path
-      d="M32.524 25.059a3.56 3.56 0 01-3.554-3.554 3.56 3.56 0 013.554-3.554h8.901a3.56 3.56 0 013.554 3.554 3.56 3.56 0 01-3.554 3.554h-8.901z"
-      fill="#ECB22E"
-    />
-    {/* Red */}
-    <path
-      d="M28.970 34.317a3.56 3.56 0 013.554 3.554 3.56 3.56 0 01-3.554 3.554 3.56 3.56 0 01-3.554-3.554v-3.554h3.554z"
-      fill="#E01E5A"
-    />
-    <path
-      d="M28.970 32.524a3.56 3.56 0 013.554 3.554v8.901a3.56 3.56 0 01-3.554 3.554 3.56 3.56 0 01-3.554-3.554v-8.901a3.56 3.56 0 013.554-3.554z"
-      fill="#E01E5A"
-    />
-  </svg>
-);
-
-const ChevronDown = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-4 w-4"
-    viewBox="0 0 20 20"
-    fill="currentColor"
-  >
-    <path
-      fillRule="evenodd"
-      d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-      clipRule="evenodd"
-    />
-  </svg>
-);
-
-const SearchIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-5 w-5"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={2}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"
-    />
-  </svg>
-);
+import SlackLogo from '@/app/components/shared/icons/SlackLogo';
+import ChevronDown from '@/app/components/shared/icons/ChevronDown';
+import SearchIcon from '@/app/components/shared/icons/SearchIcon';
 
 const navLinks = [
   { label: "Features", hasDropdown: true },
