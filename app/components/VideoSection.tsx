@@ -60,7 +60,7 @@ export default function VideoSection() {
   const [activeTab, setActiveTab] = useState("plan-launches");
 
   return (
-    <section className="bg-[#f4ede4] py-16 px-6">
+    <section className="bg-white py-16 px-6">
       {/* Video placeholder */}
       <div className="mx-auto max-w-4xl">
         <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl bg-[#3b0764] aspect-video flex items-center justify-center">
