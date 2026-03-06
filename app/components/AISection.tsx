@@ -35,17 +35,30 @@ const Sparkles = () => (
 
 export default function AISection() {
   const [activeTab, setActiveTab] = useState("slackbot");
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const currentIndex = aiTabs.findIndex(tab => tab.id === activeTab);
   const activeTabData = aiTabs[currentIndex];
 
+  const handleTabChange = (newTabId: string) => {
+    if (newTabId === activeTab) return;
+    
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setActiveTab(newTabId);
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 50);
+    }, 300);
+  };
+
   const handlePrev = () => {
     const newIndex = currentIndex > 0 ? currentIndex - 1 : aiTabs.length - 1;
-    setActiveTab(aiTabs[newIndex].id);
+    handleTabChange(aiTabs[newIndex].id);
   };
 
   const handleNext = () => {
     const newIndex = currentIndex < aiTabs.length - 1 ? currentIndex + 1 : 0;
-    setActiveTab(aiTabs[newIndex].id);
+    handleTabChange(aiTabs[newIndex].id);
   };
 
   return (
@@ -74,7 +87,9 @@ export default function AISection() {
             </h3>
           </div>
 
-          <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl aspect-video bg-black group">
+          <div className={`relative w-full overflow-hidden rounded-2xl shadow-2xl aspect-video bg-black group transition-opacity duration-300 ${
+            isTransitioning ? 'opacity-0' : 'opacity-100'
+          }`}>
             <video 
               key={activeTab}
               className="w-full h-full object-cover"
@@ -113,7 +128,7 @@ export default function AISection() {
               {aiTabs.map((tab) => (
                 <button
                   key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
+                  onClick={() => handleTabChange(tab.id)}
                   className={`h-2 rounded-full transition-all ${
                     activeTab === tab.id ? "w-8 bg-white" : "w-2 bg-white/50 hover:bg-white/75"
                   }`}
@@ -130,7 +145,7 @@ export default function AISection() {
               return (
                 <button
                   key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
+                  onClick={() => handleTabChange(tab.id)}
                   className={`
                     rounded-full px-5 py-2.5 text-base font-semibold transition-all duration-200 border
                     ${

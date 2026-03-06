@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const tabs = [
   {
@@ -136,17 +136,30 @@ const tabs = [
 
 export default function VideoSection() {
   const [activeTab, setActiveTab] = useState("plan-launches");
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const currentIndex = tabs.findIndex(tab => tab.id === activeTab);
   const activeTabData = tabs[currentIndex];
 
+  const handleTabChange = (newTabId: string) => {
+    if (newTabId === activeTab) return;
+    
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setActiveTab(newTabId);
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 50);
+    }, 300);
+  };
+
   const handlePrev = () => {
     const newIndex = currentIndex > 0 ? currentIndex - 1 : tabs.length - 1;
-    setActiveTab(tabs[newIndex].id);
+    handleTabChange(tabs[newIndex].id);
   };
 
   const handleNext = () => {
     const newIndex = currentIndex < tabs.length - 1 ? currentIndex + 1 : 0;
-    setActiveTab(tabs[newIndex].id);
+    handleTabChange(tabs[newIndex].id);
   };
 
   return (
@@ -161,7 +174,9 @@ export default function VideoSection() {
         </div>
 
         {/* Video with navigation */}
-        <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl aspect-video bg-black group">
+        <div className={`relative w-full overflow-hidden rounded-2xl shadow-2xl aspect-video bg-black group transition-opacity duration-300 ${
+          isTransitioning ? 'opacity-0' : 'opacity-100'
+        }`}>
           <video 
             key={activeTab}
             className="w-full h-full object-cover"
@@ -200,7 +215,7 @@ export default function VideoSection() {
             {tabs.map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                onClick={() => handleTabChange(tab.id)}
                 className={`h-2 rounded-full transition-all ${
                   activeTab === tab.id ? "w-8 bg-white" : "w-2 bg-white/50 hover:bg-white/75"
                 }`}
@@ -217,7 +232,7 @@ export default function VideoSection() {
             return (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                onClick={() => handleTabChange(tab.id)}
                 className={`
                   flex items-center gap-2 rounded-full px-5 py-2.5 text-base font-semibold transition-all duration-200 border
                   ${
