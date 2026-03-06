@@ -27,12 +27,12 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full px-4 pt-4 pb-2">
+    <header className="sticky top-0 z-50 w-full px-0 md:px-4 pt-0 md:pt-4 pb-0 md:pb-2">
       <div
-        className={`mx-auto flex h-16 max-w-7xl items-center justify-between px-6 bg-white transition-all duration-500 ease-in-out ${
+        className={`mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6 bg-white transition-all duration-500 ease-in-out ${
           isScrolled
-            ? "rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
-            : "rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.08)]"
+            ? "md:rounded-full md:shadow-[0_8px_30px_rgb(0,0,0,0.12)] shadow-sm"
+            : "md:rounded-3xl md:shadow-[0_4px_20px_rgb(0,0,0,0.08)] shadow-sm"
         }`}
       >
         {/* Logo */}
