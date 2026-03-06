@@ -136,12 +136,32 @@ const tabs = [
 
 export default function VideoSection() {
   const [activeTab, setActiveTab] = useState("plan-launches");
+  const currentIndex = tabs.findIndex(tab => tab.id === activeTab);
+  const activeTabData = tabs[currentIndex];
+
+  const handlePrev = () => {
+    const newIndex = currentIndex > 0 ? currentIndex - 1 : tabs.length - 1;
+    setActiveTab(tabs[newIndex].id);
+  };
+
+  const handleNext = () => {
+    const newIndex = currentIndex < tabs.length - 1 ? currentIndex + 1 : 0;
+    setActiveTab(tabs[newIndex].id);
+  };
 
   return (
     <section className="bg-white py-10 px-4">
-      {/* Video */}
       <div className="mx-auto max-w-5xl">
-        <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl aspect-video bg-black">
+        {/* Active tab title above video - Mobile only */}
+        <div className="mb-4 md:hidden">
+          <h3 className="text-2xl font-bold text-[#2d1b3d] flex items-center gap-3">
+            <span>{activeTabData.label}</span>
+            <span className="text-[#611f69]">{activeTabData.icon}</span>
+          </h3>
+        </div>
+
+        {/* Video with navigation */}
+        <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl aspect-video bg-black group">
           <video 
             key={activeTab}
             className="w-full h-full object-cover"
@@ -154,35 +174,67 @@ export default function VideoSection() {
             <source src="/videos/slack.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-        </div>
-      </div>
 
-      {/* Tab buttons */}
-      <div className="mx-auto mt-6 max-w-3xl flex flex-wrap items-center justify-center gap-x-2 gap-y-3">
-        {tabs.map((tab) => {
-          const isActive = activeTab === tab.id;
-          return (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`
-                flex items-center gap-2 rounded-full px-5 py-2.5 text-base font-semibold transition-all duration-200 ease-in-out
-                ${
-                  isActive
-                    ? "bg-[#2d1b3d] text-white border border-[#2d1b3d]"
-                    : "bg-white/60 text-[#2d1b3d] hover:bg-purple-100 border border-[#2d1b3d]/10"
-                }
-              `}
-            >
-              {tab.label}
-              <span
-                className={`transition-transform duration-200 ${isActive ? "text-white scale-110" : "text-[#611f69]"}`}
+          {/* Navigation arrows */}
+          <button
+            onClick={handlePrev}
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#2d1b3d] rounded-full p-3 shadow-lg transition-all opacity-0 group-hover:opacity-100 z-10"
+            aria-label="Previous"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={handleNext}
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#2d1b3d] rounded-full p-3 shadow-lg transition-all opacity-0 group-hover:opacity-100 z-10"
+            aria-label="Next"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Slider dots indicator */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`h-2 rounded-full transition-all ${
+                  activeTab === tab.id ? "w-8 bg-white" : "w-2 bg-white/50 hover:bg-white/75"
+                }`}
+                aria-label={`Go to ${tab.label}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Tab buttons below video - Desktop only */}
+        <div className="hidden md:flex mt-6 flex-wrap items-center justify-center gap-2">
+          {tabs.map((tab) => {
+            const isActive = activeTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`
+                  flex items-center gap-2 rounded-full px-5 py-2.5 text-base font-semibold transition-all duration-200
+                  ${
+                    isActive
+                      ? "bg-[#2d1b3d] text-white shadow-md"
+                      : "bg-white text-[#2d1b3d] hover:bg-gray-100 border border-gray-200"
+                  }
+                `}
               >
-                {tab.icon}
-              </span>
-            </button>
-          );
-        })}
+                {tab.label}
+                <span className={`transition-transform duration-200 ${isActive ? "scale-110" : ""}`}>
+                  {tab.icon}
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

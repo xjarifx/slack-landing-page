@@ -35,6 +35,18 @@ const Sparkles = () => (
 
 export default function AISection() {
   const [activeTab, setActiveTab] = useState("slackbot");
+  const currentIndex = aiTabs.findIndex(tab => tab.id === activeTab);
+  const activeTabData = aiTabs[currentIndex];
+
+  const handlePrev = () => {
+    const newIndex = currentIndex > 0 ? currentIndex - 1 : aiTabs.length - 1;
+    setActiveTab(aiTabs[newIndex].id);
+  };
+
+  const handleNext = () => {
+    const newIndex = currentIndex < aiTabs.length - 1 ? currentIndex + 1 : 0;
+    setActiveTab(aiTabs[newIndex].id);
+  };
 
   return (
     <section className="relative bg-[#4a1260] pt-12 pb-0 text-white overflow-hidden">
@@ -53,44 +65,87 @@ export default function AISection() {
           </p>
         </div>
 
-        {/* Two-column: tabs left, video right */}
-        <div className="relative z-10 mx-auto mt-8 max-w-6xl flex flex-col md:flex-row items-stretch gap-6">
-        {/* Left — vertical tab list */}
-        <div className="w-full md:w-72 shrink-0 bg-white rounded-2xl p-6 flex flex-col gap-1 shadow-xl">
-          {aiTabs.map((tab) => {
-            const isActive = activeTab === tab.id;
-            return (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`text-left px-3 py-3 rounded-lg text-sm font-medium transition-colors ${
-                  isActive
-                    ? "text-[#611f69] font-semibold bg-purple-50"
-                    : "text-gray-600 hover:text-[#611f69] hover:bg-purple-50"
-                }`}
-              >
-                {tab.label}
-              </button>
-            );
-          })}
-        </div>
+        {/* Video slider */}
+        <div className="relative z-10 mx-auto mt-8 max-w-5xl">
+          {/* Active tab title above video - Mobile only */}
+          <div className="mb-4 md:hidden">
+            <h3 className="text-2xl font-bold text-white">
+              {activeTabData.label}
+            </h3>
+          </div>
 
-        {/* Right — video */}
-        <div className="flex-1 min-h-72 md:min-h-0 rounded-2xl overflow-hidden shadow-xl relative bg-black">
-          <video 
-            key={activeTab}
-            className="w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-          >
-            <source src="/videos/slack.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl aspect-video bg-black group">
+            <video 
+              key={activeTab}
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+            >
+              <source src="/videos/slack.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            {/* Navigation arrows */}
+            <button
+              onClick={handlePrev}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#611f69] rounded-full p-3 shadow-lg transition-all opacity-0 group-hover:opacity-100 z-10"
+              aria-label="Previous"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={handleNext}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#611f69] rounded-full p-3 shadow-lg transition-all opacity-0 group-hover:opacity-100 z-10"
+              aria-label="Next"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            {/* Slider dots indicator */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+              {aiTabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`h-2 rounded-full transition-all ${
+                    activeTab === tab.id ? "w-8 bg-white" : "w-2 bg-white/50 hover:bg-white/75"
+                  }`}
+                  aria-label={`Go to ${tab.label}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Tab buttons below video - Desktop only */}
+          <div className="hidden md:flex mt-6 flex-wrap items-center justify-center gap-2">
+            {aiTabs.map((tab) => {
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`
+                    rounded-full px-5 py-2.5 text-base font-semibold transition-all duration-200
+                    ${
+                      isActive
+                        ? "bg-white text-[#611f69] shadow-md"
+                        : "bg-white/20 text-white hover:bg-white/30 border border-white/30"
+                    }
+                  `}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
-      </div>
       </div>
 
       {/* Bottom white curve - Slack-style with overlapping arcs */}
