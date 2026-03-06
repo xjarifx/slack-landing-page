@@ -132,11 +132,11 @@ export default function AISection() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`
-                    rounded-full px-5 py-2.5 text-base font-semibold transition-all duration-200
+                    rounded-full px-5 py-2.5 text-base font-semibold transition-all duration-200 border
                     ${
                       isActive
-                        ? "bg-white text-[#611f69] shadow-md"
-                        : "bg-white/20 text-white hover:bg-white/30 border border-white/30"
+                        ? "bg-white text-[#611f69] border-white shadow-md"
+                        : "bg-white/20 text-white hover:bg-white/30 border-white/30"
                     }
                   `}
                 >

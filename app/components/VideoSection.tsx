@@ -219,11 +219,11 @@ export default function VideoSection() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`
-                  flex items-center gap-2 rounded-full px-5 py-2.5 text-base font-semibold transition-all duration-200
+                  flex items-center gap-2 rounded-full px-5 py-2.5 text-base font-semibold transition-all duration-200 border
                   ${
                     isActive
-                      ? "bg-[#2d1b3d] text-white shadow-md"
-                      : "bg-white text-[#2d1b3d] hover:bg-gray-100 border border-gray-200"
+                      ? "bg-[#2d1b3d] text-white border-[#2d1b3d] shadow-md"
+                      : "bg-white text-[#2d1b3d] hover:bg-gray-100 border-gray-200"
                   }
                 `}
               >
