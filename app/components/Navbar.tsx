@@ -67,7 +67,7 @@ export default function Navbar() {
           {navLinks.map(({ label, hasDropdown }) => (
             <a
               key={label}
-              href="#"
+              href="/coming-soon"
               className="flex items-center gap-0.5 px-2 py-2 text-xs font-medium text-[#1d1c1d] hover:text-[#611f69] transition-colors rounded"
             >
               {label}
@@ -86,21 +86,21 @@ export default function Navbar() {
           </button>
 
           <a
-            href="#"
+            href="/coming-soon"
             className="text-sm font-medium text-[#1d1c1d] hover:text-[#611f69] transition-colors whitespace-nowrap"
           >
             Sign in
           </a>
 
           <a
-            href="#"
+            href="/coming-soon"
             className="rounded border-2 border-[#611f69] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#611f69] hover:bg-[#f4ede4] transition-colors whitespace-nowrap"
           >
             Request a Demo
           </a>
 
           <a
-            href="#"
+            href="/coming-soon"
             className="rounded bg-[#611f69] border border-[#611f69] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#4a154b] transition-colors whitespace-nowrap"
           >
             Get Started
@@ -117,14 +117,14 @@ export default function Navbar() {
           </button>
 
           <a
-            href="#"
+            href="/coming-soon"
             className="text-sm font-medium text-[#1d1c1d] hover:text-[#611f69] transition-colors whitespace-nowrap"
           >
             Sign in
           </a>
 
           <a
-            href="#"
+            href="/coming-soon"
             className="rounded bg-[#611f69] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#4a154b] transition-colors whitespace-nowrap"
           >
             Get Started
@@ -141,7 +141,7 @@ export default function Navbar() {
           </button>
 
           <a
-            href="#"
+            href="/coming-soon"
             className="rounded bg-[#611f69] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#4a154b] transition-colors whitespace-nowrap"
           >
             Get Started
@@ -187,7 +187,7 @@ export default function Navbar() {
           </button>
 
           <a
-            href="#"
+            href="/coming-soon"
             className="rounded bg-[#611f69] px-3 py-2 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#4a154b] transition-colors whitespace-nowrap"
           >
             Get Started
@@ -230,7 +230,7 @@ export default function Navbar() {
           {navLinks.map(({ label, hasDropdown }) => (
             <a
               key={label}
-              href="#"
+              href="/coming-soon"
               className="flex items-center justify-between py-2 text-sm font-medium text-[#1d1c1d] hover:text-[#611f69]"
             >
               {label}
@@ -239,13 +239,13 @@ export default function Navbar() {
           ))}
           <hr className="my-2 border-gray-200" />
           <a
-            href="#"
+            href="/coming-soon"
             className="py-2 text-sm font-medium text-[#1d1c1d] hover:text-[#611f69]"
           >
             Sign in
           </a>
           <a
-            href="#"
+            href="/coming-soon"
             className="mt-1 rounded border border-[#611f69] px-4 py-2 text-center text-xs font-bold uppercase tracking-wider text-[#611f69] hover:bg-[#f4ede4]"
           >
             Request a Demo

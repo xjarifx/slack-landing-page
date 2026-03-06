@@ -51,7 +51,7 @@ export default function Accordion({ items, defaultActive, className = '', onActi
                   {item.description}
                 </p>
                 <a
-                  href="#"
+                  href="/coming-soon"
                   className="inline-flex items-center gap-1 text-base font-semibold text-[#611f69] hover:underline"
                 >
                   {item.link} →

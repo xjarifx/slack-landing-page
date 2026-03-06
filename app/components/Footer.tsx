@@ -53,13 +53,13 @@ export default function Footer() {
         </h2>
         <div className="mt-4 flex flex-wrap justify-center gap-4 pb-10">
           <a
-            href="#"
+            href="/coming-soon"
             className="rounded border-2 border-white px-8 py-2.5 text-sm font-bold uppercase tracking-widest text-white hover:bg-white hover:text-[#4a1260] transition-colors"
           >
             Get Started
           </a>
           <a
-            href="#"
+            href="/coming-soon"
             className="rounded border-2 border-white px-8 py-2.5 text-sm font-bold uppercase tracking-widest text-white hover:bg-white hover:text-[#4a1260] transition-colors"
           >
             Request a Demo
@@ -152,7 +152,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             {/* LinkedIn */}
             <a
-              href="#"
+              href="/coming-soon"
               aria-label="LinkedIn"
               className="text-gray-400 hover:text-gray-600"
             >
@@ -163,7 +163,7 @@ export default function Footer() {
             </a>
             {/* Instagram */}
             <a
-              href="#"
+              href="/coming-soon"
               aria-label="Instagram"
               className="text-gray-400 hover:text-gray-600"
             >
@@ -187,7 +187,7 @@ export default function Footer() {
             </a>
             {/* Facebook */}
             <a
-              href="#"
+              href="/coming-soon"
               aria-label="Facebook"
               className="text-gray-400 hover:text-gray-600"
             >
@@ -197,7 +197,7 @@ export default function Footer() {
             </a>
             {/* X / Twitter */}
             <a
-              href="#"
+              href="/coming-soon"
               aria-label="X"
               className="text-gray-400 hover:text-gray-600"
             >
@@ -207,7 +207,7 @@ export default function Footer() {
             </a>
             {/* YouTube */}
             <a
-              href="#"
+              href="/coming-soon"
               aria-label="YouTube"
               className="text-gray-400 hover:text-gray-600"
             >
@@ -217,7 +217,7 @@ export default function Footer() {
             </a>
             {/* TikTok */}
             <a
-              href="#"
+              href="/coming-soon"
               aria-label="TikTok"
               className="text-gray-400 hover:text-gray-600"
             >
@@ -241,7 +241,7 @@ export default function Footer() {
                   {col.links.map((link) => (
                     <li key={link}>
                       <a
-                        href="#"
+                        href="/coming-soon"
                         className="text-sm text-gray-500 hover:text-[#611f69] transition-colors"
                       >
                         {link}
@@ -279,7 +279,7 @@ export default function Footer() {
                     {col.links.map((link) => (
                       <li key={link}>
                         <a
-                          href="#"
+                          href="/coming-soon"
                           className="text-sm text-gray-500 hover:text-[#611f69] transition-colors"
                         >
                           {link}
@@ -302,7 +302,7 @@ export default function Footer() {
 
             {/* Download Link */}
             <a
-              href="#"
+              href="/coming-soon"
               className="text-[#1890d5] text-base font-semibold hover:underline flex items-center gap-2"
             >
               Download Slack
@@ -323,20 +323,20 @@ export default function Footer() {
 
             {/* Links */}
             <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500">
-              <a href="#" className="hover:text-gray-700">
+              <a href="/coming-soon" className="hover:text-gray-700">
                 Privacy
               </a>
               <span>·</span>
-              <a href="#" className="hover:text-gray-700">
+              <a href="/coming-soon" className="hover:text-gray-700">
                 Terms
               </a>
               <span>·</span>
-              <a href="#" className="hover:text-gray-700">
+              <a href="/coming-soon" className="hover:text-gray-700">
                 Cookie Preferences
               </a>
               <span>·</span>
               <a
-                href="#"
+                href="/coming-soon"
                 className="hover:text-gray-700 flex items-center gap-1"
               >
                 Your Privacy Choices
@@ -364,7 +364,7 @@ export default function Footer() {
           <div className="hidden lg:flex flex-row items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-3 text-sm text-gray-400">
               <a
-                href="#"
+                href="/coming-soon"
                 className="text-[#611f69] font-semibold hover:underline flex items-center gap-1"
               >
                 Download Slack
@@ -377,19 +377,19 @@ export default function Footer() {
                 </svg>
               </a>
               <span>·</span>
-              <a href="#" className="hover:text-gray-600">
+              <a href="/coming-soon" className="hover:text-gray-600">
                 Privacy
               </a>
               <span>·</span>
-              <a href="#" className="hover:text-gray-600">
+              <a href="/coming-soon" className="hover:text-gray-600">
                 Terms
               </a>
               <span>·</span>
-              <a href="#" className="hover:text-gray-600">
+              <a href="/coming-soon" className="hover:text-gray-600">
                 Cookie Preferences
               </a>
               <span>·</span>
-              <a href="#" className="hover:text-gray-600">
+              <a href="/coming-soon" className="hover:text-gray-600">
                 Your Privacy Choices
               </a>
             </div>

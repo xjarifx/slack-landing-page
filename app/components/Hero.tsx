@@ -23,8 +23,8 @@ export default function Hero() {
       </p>
 
       <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-        <Button variant="primary">Get Started</Button>
-        <Button variant="secondary">Find Your Plan →</Button>
+        <Button variant="primary" href="/coming-soon">Get Started</Button>
+        <Button variant="secondary" href="/coming-soon">Find Your Plan →</Button>
       </div>
 
       <div className="mt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-8">

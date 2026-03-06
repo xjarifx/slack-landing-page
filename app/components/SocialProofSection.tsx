@@ -155,7 +155,7 @@ export default function SocialProofSection() {
                 {r.title}
               </p>
               <a
-                href="#"
+                href="/coming-soon"
                 className="mt-2 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#611f69] hover:underline"
               >
                 {r.cta}
