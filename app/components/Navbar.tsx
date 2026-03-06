@@ -29,10 +29,10 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full px-4 pt-4 pb-2">
       <div
-        className={`mx-auto flex h-16 max-w-7xl items-center justify-between px-6 bg-white transition-all duration-300 ${
+        className={`mx-auto flex h-16 max-w-7xl items-center justify-between px-6 bg-white transition-all duration-500 ease-in-out ${
           isScrolled
-            ? "rounded-full shadow-lg"
-            : "rounded-2xl shadow-md"
+            ? "rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
+            : "rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.08)]"
         }`}
       >
         {/* Logo */}
