@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import SectionHeading from '@/app/components/shared/SectionHeading';
 import Accordion, { AccordionItem } from '@/app/components/shared/Accordion';
 import VideoPlaceholder from '@/app/components/shared/VideoPlaceholder';
@@ -28,6 +31,8 @@ const items: AccordionItem[] = [
 ];
 
 export default function KnowledgeSection() {
+  const [activeItem, setActiveItem] = useState("slackbot");
+
   return (
     <section id="knowledge" className={`bg-white ${SPACING.sectionPadding}`}>
       <SectionHeading
@@ -45,8 +50,8 @@ export default function KnowledgeSection() {
       />
 
       <div className={`mx-auto mt-10 ${SPACING.maxWidthContent} flex flex-col md:flex-row gap-6 items-start`}>
-        <Accordion items={items} defaultActive="slackbot" className="w-full md:w-96 shrink-0" />
-        <VideoPlaceholder className="flex-1 w-full aspect-video" />
+        <Accordion items={items} defaultActive="slackbot" className="w-full md:w-96 shrink-0" onActiveChange={setActiveItem} />
+        <VideoPlaceholder key={activeItem} className="flex-1 w-full aspect-video" />
       </div>
     </section>
   );

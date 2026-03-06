@@ -75,19 +75,19 @@ export default function AISection() {
           })}
         </div>
 
-        {/* Right — video placeholder */}
-        <div className="flex-1 min-h-72 md:min-h-0 rounded-2xl overflow-hidden shadow-xl bg-[#3b0764] relative flex items-center justify-center">
-          {/* Blobs */}
-          <div className="absolute -top-10 -right-10 h-48 w-48 rounded-full bg-purple-400 opacity-20 blur-3xl" />
-          <div className="absolute -bottom-10 -left-10 h-48 w-48 rounded-full bg-green-300 opacity-10 blur-3xl" />
-
-          <div className="relative z-10 flex flex-col items-center gap-3 text-white/40">
-            <svg className="h-14 w-14" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="32" cy="32" r="30" stroke="currentColor" strokeWidth="2"/>
-              <polygon points="26,20 26,44 48,32" fill="currentColor"/>
-            </svg>
-            <span className="text-sm font-medium tracking-wide">Video coming soon</span>
-          </div>
+        {/* Right — video */}
+        <div className="flex-1 min-h-72 md:min-h-0 rounded-2xl overflow-hidden shadow-xl relative">
+          <video 
+            key={activeTab}
+            className="w-full h-full object-cover"
+            controls
+            autoPlay
+            muted
+            loop
+          >
+            <source src="/videos/slack.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
       </div>

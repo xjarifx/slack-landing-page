@@ -139,34 +139,20 @@ export default function VideoSection() {
 
   return (
     <section className="bg-white py-10 px-4">
-      {/* Video placeholder */}
+      {/* Video */}
       <div className="mx-auto max-w-5xl">
-        <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl bg-[#3b0764] aspect-video flex items-center justify-center">
-          {/* Decorative gradient blobs matching the screenshot background */}
-          <div className="absolute -top-16 -left-16 h-64 w-64 rounded-full bg-purple-400 opacity-30 blur-3xl" />
-          <div className="absolute -bottom-16 -right-16 h-64 w-64 rounded-full bg-green-300 opacity-20 blur-3xl" />
-
-          {/* Placeholder content */}
-          <div className="relative z-10 flex flex-col items-center gap-3 text-white/40">
-            <svg
-              className="h-16 w-16"
-              viewBox="0 0 64 64"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle
-                cx="32"
-                cy="32"
-                r="30"
-                stroke="currentColor"
-                strokeWidth="2"
-              />
-              <polygon points="26,20 26,44 48,32" fill="currentColor" />
-            </svg>
-            <span className="text-sm font-medium tracking-wide">
-              Video coming soon
-            </span>
-          </div>
+        <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl aspect-video">
+          <video 
+            key={activeTab}
+            className="w-full h-full object-cover"
+            controls
+            autoPlay
+            muted
+            loop
+          >
+            <source src="/videos/slack.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
 

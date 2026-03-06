@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import SectionHeading from '@/app/components/shared/SectionHeading';
 import Accordion, { AccordionItem } from '@/app/components/shared/Accordion';
 import VideoPlaceholder from '@/app/components/shared/VideoPlaceholder';
@@ -28,6 +31,8 @@ const items: AccordionItem[] = [
 ];
 
 export default function PlatformSection() {
+  const [activeItem, setActiveItem] = useState("integrations");
+
   return (
     <section id="platform" className={`bg-white ${SPACING.sectionPadding}`}>
       <SectionHeading
@@ -47,7 +52,7 @@ export default function PlatformSection() {
 
       <div className={`mx-auto mt-10 ${SPACING.maxWidthContent} flex flex-col md:flex-row gap-6 items-start`}>
         <div className="w-full md:w-96 shrink-0 flex flex-col gap-4">
-          <Accordion items={items} defaultActive="integrations" />
+          <Accordion items={items} defaultActive="integrations" onActiveChange={setActiveItem} />
           
           {/* Vercel testimonial */}
           <div className="mt-4 space-y-2">
@@ -67,7 +72,7 @@ export default function PlatformSection() {
           </div>
         </div>
 
-        <VideoPlaceholder className="flex-1 w-full aspect-video" />
+        <VideoPlaceholder key={activeItem} className="flex-1 w-full aspect-video" />
       </div>
     </section>
   );

@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import SectionHeading from '@/app/components/shared/SectionHeading';
 import Accordion, { AccordionItem } from '@/app/components/shared/Accordion';
 import VideoPlaceholder from '@/app/components/shared/VideoPlaceholder';
@@ -28,6 +31,8 @@ const items: AccordionItem[] = [
 ];
 
 export default function ProcessSection() {
+  const [activeItem, setActiveItem] = useState("templates");
+
   return (
     <section id="process" className={`bg-white ${SPACING.sectionPadding}`}>
       <SectionHeading
@@ -45,8 +50,8 @@ export default function ProcessSection() {
       />
 
       <div className={`mx-auto mt-10 ${SPACING.maxWidthContent} flex flex-col md:flex-row gap-6 items-start`}>
-        <Accordion items={items} defaultActive="templates" className="w-full md:w-96 shrink-0" />
-        <VideoPlaceholder className="flex-1 w-full aspect-video" />
+        <Accordion items={items} defaultActive="templates" className="w-full md:w-96 shrink-0" onActiveChange={setActiveItem} />
+        <VideoPlaceholder key={activeItem} className="flex-1 w-full aspect-video" />
       </div>
     </section>
   );
