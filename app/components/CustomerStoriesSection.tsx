@@ -8,37 +8,34 @@ import Button from '@/app/components/shared/Button';
 import WaveDivider from '@/app/components/shared/WaveDivider';
 
 export default function CustomerStoriesSection() {
-  const [expandedCard, setExpandedCard] = useState('openai');
+  const [expandedCard, setExpandedCard] = useState('target');
 const stories = [
   {
     id: "openai",
     company: "OpenAI",
-    title: "How OpenAI Connects with Customers and Expands ChatGPT with Slack",
-    featured: true,
-    hasPlay: true,
+    featured: false,
+    hasPlay: false,
     bg: "bg-gray-900",
     logo: (
-      <div className="flex items-center gap-2">
-        <Image 
-          src="/company_logo/openai.svg" 
-          alt="OpenAI logo" 
-          width={120} 
-          height={32} 
-          className="h-8 w-auto brightness-0 invert"
-        />
-      </div>
+      <Image 
+        src="/company_logo/openai.svg" 
+        alt="OpenAI logo" 
+        width={120} 
+        height={32} 
+        className="h-8 w-auto brightness-0 invert"
+      />
     ),
   },
   {
-    id: "salesforce",
-    company: "Salesforce",
+    id: "target",
+    company: "Target",
     featured: false,
     hasPlay: false,
     bg: "bg-[#1a1a2e]",
     logo: (
       <Image 
-        src="/company_logo/salesforce.png" 
-        alt="Salesforce logo" 
+        src="/company_logo/Target.png" 
+        alt="Target logo" 
         width={140} 
         height={40} 
         className="h-10 w-auto brightness-0 invert"

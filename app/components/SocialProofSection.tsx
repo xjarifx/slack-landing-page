@@ -1,6 +1,6 @@
 const metrics = [
   {
-    value: "700M",
+    value: "70M",
     label: (
       <>
         Messages sent daily<sup>2</sup>
