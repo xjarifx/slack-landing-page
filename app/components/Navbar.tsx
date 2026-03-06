@@ -36,20 +36,20 @@ export default function Navbar() {
         }`}
       >
         {/* Logo */}
-        <a href="/" className="flex flex-col items-start leading-none shrink-0">
+        <a href="/" className="flex flex-col items-start leading-none shrink-0 min-w-0">
           <div className="flex items-center gap-2">
             <Image 
               src="/company_logo/slack.png" 
               alt="Slack" 
               width={32} 
               height={32}
-              className="h-8 w-8"
+              className="h-7 w-7 sm:h-8 sm:w-8"
             />
-            <span className="text-2xl font-bold tracking-tight text-[#1d1c1d]">
+            <span className="text-xl sm:text-2xl font-bold tracking-tight text-[#1d1c1d]">
               slack
             </span>
           </div>
-          <span className="ml-10 text-[10px] text-gray-500 tracking-wide flex items-center gap-1">
+          <span className="hidden sm:flex ml-10 text-[10px] text-gray-500 tracking-wide items-center gap-1">
             from
             <Image
               src="/company_logo/salesforce.png"
@@ -77,7 +77,7 @@ export default function Navbar() {
         </nav>
 
         {/* Desktop Actions */}
-        <div className="hidden lg:flex items-center gap-4 ml-auto">
+        <div className="hidden xl:flex items-center gap-4 ml-auto">
           <button
             aria-label="Search"
             className="p-2 text-[#1d1c1d] hover:text-[#611f69] transition-colors cursor-pointer"
@@ -87,28 +87,28 @@ export default function Navbar() {
 
           <a
             href="#"
-            className="text-sm font-medium text-[#1d1c1d] hover:text-[#611f69] transition-colors"
+            className="text-sm font-medium text-[#1d1c1d] hover:text-[#611f69] transition-colors whitespace-nowrap"
           >
             Sign in
           </a>
 
           <a
             href="#"
-            className="rounded border-2 border-[#611f69] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#611f69] hover:bg-[#f4ede4] transition-colors"
+            className="rounded border-2 border-[#611f69] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#611f69] hover:bg-[#f4ede4] transition-colors whitespace-nowrap"
           >
             Request a Demo
           </a>
 
           <a
             href="#"
-            className="rounded bg-[#611f69] border  border-[#611f69] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#4a154b] transition-colors"
+            className="rounded bg-[#611f69] border border-[#611f69] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#4a154b] transition-colors whitespace-nowrap"
           >
             Get Started
           </a>
         </div>
 
-        {/* Tablet Actions (md to lg) */}
-        <div className="hidden md:flex lg:hidden items-center gap-3 ml-auto">
+        {/* Tablet Actions (lg to xl) */}
+        <div className="hidden lg:flex xl:hidden items-center gap-2 ml-auto">
           <button
             aria-label="Search"
             className="p-2 text-[#1d1c1d] hover:text-[#611f69] transition-colors cursor-pointer"
@@ -118,7 +118,31 @@ export default function Navbar() {
 
           <a
             href="#"
-            className="rounded bg-[#611f69] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#4a154b] transition-colors"
+            className="text-sm font-medium text-[#1d1c1d] hover:text-[#611f69] transition-colors whitespace-nowrap"
+          >
+            Sign in
+          </a>
+
+          <a
+            href="#"
+            className="rounded bg-[#611f69] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#4a154b] transition-colors whitespace-nowrap"
+          >
+            Get Started
+          </a>
+        </div>
+
+        {/* Tablet Actions (md to lg) */}
+        <div className="hidden md:flex lg:hidden items-center gap-2 ml-auto">
+          <button
+            aria-label="Search"
+            className="p-2 text-[#1d1c1d] hover:text-[#611f69] transition-colors cursor-pointer"
+          >
+            <SearchIcon />
+          </button>
+
+          <a
+            href="#"
+            className="rounded bg-[#611f69] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#4a154b] transition-colors whitespace-nowrap"
           >
             Get Started
           </a>
@@ -154,23 +178,23 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Actions (below md) */}
-        <div className="flex md:hidden items-center gap-3 ml-auto">
+        <div className="flex md:hidden items-center gap-2 ml-auto">
           <button
             aria-label="Search"
-            className="p-2 text-[#1d1c1d] hover:text-[#611f69] transition-colors cursor-pointer"
+            className="p-1.5 text-[#1d1c1d] hover:text-[#611f69] transition-colors cursor-pointer"
           >
             <SearchIcon />
           </button>
 
           <a
             href="#"
-            className="rounded bg-[#611f69] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#4a154b] transition-colors"
+            className="rounded bg-[#611f69] px-3 py-2 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#4a154b] transition-colors whitespace-nowrap"
           >
             Get Started
           </a>
 
           <button
-            className="p-2 text-[#1d1c1d]"
+            className="p-1.5 text-[#1d1c1d]"
             aria-label="Toggle menu"
             onClick={() => setMobileOpen((o) => !o)}
           >
