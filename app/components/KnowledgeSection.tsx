@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import SectionHeading from '@/app/components/shared/SectionHeading';
+import MobileSectionTitle from '@/app/components/shared/MobileSectionTitle';
 import Accordion, { AccordionItem } from '@/app/components/shared/Accordion';
 import VideoPlaceholder from '@/app/components/shared/VideoPlaceholder';
 import { SPACING } from '@/app/lib/constants';
@@ -35,6 +36,7 @@ export default function KnowledgeSection() {
 
   return (
     <section id="knowledge" className={`bg-white ${SPACING.sectionPadding}`}>
+      <MobileSectionTitle title="Knowledge" />
       <SectionHeading
         title={
           <>

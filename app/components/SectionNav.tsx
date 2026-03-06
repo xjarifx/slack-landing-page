@@ -59,30 +59,32 @@ export default function SectionNav() {
   }, []);
 
   return (
-    <div className={`sticky top-20 z-40 flex justify-center py-3 transition-opacity duration-300 ${
+    <div className={`hidden md:block sticky top-20 z-40 py-3 transition-opacity duration-300 ${
       isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
     }`}>
-      <nav className="flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-sm shadow-sm border border-gray-200 px-2 py-2">
-        {sections.map((section) => {
-          const isActive = active === section;
-          return (
-            <button
-              key={section}
-      onClick={() => {
-              setActive(section);
-              document.getElementById(section.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
-            }}
-              className={`rounded-full px-5 py-2 text-base font-semibold transition-all duration-200 border ${
-                isActive
-                  ? "bg-[#4a154b] text-white shadow-md border-[#4a154b]"
-                  : "bg-transparent text-[#1d1c1d] hover:bg-gray-100 border-transparent"
-              }`}
-            >
-              {section}
-            </button>
-          );
-        })}
-      </nav>
+      <div className="flex justify-center">
+        <nav className="flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-sm shadow-sm border border-gray-200 px-2 py-2">
+          {sections.map((section) => {
+            const isActive = active === section;
+            return (
+              <button
+                key={section}
+                onClick={() => {
+                  setActive(section);
+                  document.getElementById(section.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className={`rounded-full px-5 py-2 text-base font-semibold transition-all duration-200 border ${
+                  isActive
+                    ? "bg-[#4a154b] text-white shadow-md border-[#4a154b]"
+                    : "bg-transparent text-[#1d1c1d] hover:bg-gray-100 border-transparent"
+                }`}
+              >
+                {section}
+              </button>
+            );
+          })}
+        </nav>
+      </div>
     </div>
   );
 }
