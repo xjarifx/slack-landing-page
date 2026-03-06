@@ -141,14 +141,15 @@ export default function VideoSection() {
     <section className="bg-white py-10 px-4">
       {/* Video */}
       <div className="mx-auto max-w-5xl">
-        <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl aspect-video">
+        <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl aspect-video bg-black">
           <video 
             key={activeTab}
             className="w-full h-full object-cover"
-            controls
             autoPlay
             muted
             loop
+            playsInline
+            preload="auto"
           >
             <source src="/videos/slack.mp4" type="video/mp4" />
             Your browser does not support the video tag.

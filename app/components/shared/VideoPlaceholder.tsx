@@ -11,11 +11,11 @@ export default function VideoPlaceholder({
     <div className={`rounded-2xl overflow-hidden shadow-xl relative ${className}`}>
       <video 
         className="w-full h-full object-cover"
-        controls
         autoPlay
         muted
         loop
         playsInline
+        preload="auto"
       >
         <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.

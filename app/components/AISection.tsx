@@ -76,14 +76,15 @@ export default function AISection() {
         </div>
 
         {/* Right — video */}
-        <div className="flex-1 min-h-72 md:min-h-0 rounded-2xl overflow-hidden shadow-xl relative">
+        <div className="flex-1 min-h-72 md:min-h-0 rounded-2xl overflow-hidden shadow-xl relative bg-black">
           <video 
             key={activeTab}
             className="w-full h-full object-cover"
-            controls
             autoPlay
             muted
             loop
+            playsInline
+            preload="auto"
           >
             <source src="/videos/slack.mp4" type="video/mp4" />
             Your browser does not support the video tag.
