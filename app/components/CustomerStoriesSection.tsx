@@ -117,11 +117,6 @@ const stories = [
                 isExpanded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
               }`}>
                 <div className="mb-2">{story.logo}</div>
-                {story.title && (
-                  <p className="text-white text-lg font-semibold leading-snug max-w-md">
-                    {story.title}
-                  </p>
-                )}
               </div>
 
               {/* Logo - shown when collapsed */}
